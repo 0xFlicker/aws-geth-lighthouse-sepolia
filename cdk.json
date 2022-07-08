@@ -1,5 +1,5 @@
 {
-  "app": "npx ts-node --prefer-ts-exts bin/cdk-rocketpool-validator.ts",
+  "app": "npx ts-node --prefer-ts-exts bin/geth-lighthouse.ts",
   "watch": {
     "include": [
       "**"

@@ -5,32 +5,24 @@
 yum update -y
 sudo su
 
-echo "install rocketpool here!"
+yum install amazon-cloudwatch-agent -y
+
+echo "Generating JWT secret"
+mkdir -p /etc/jwt
+openssl rand -hex 32 | tr -d "\n" > "/etc/jwt/jwt-secret"
+
+echo "Install geth"
 
 cd /usr/bin
-wget https://github.com/rocket-pool/smartnode-install/releases/latest/download/rocketpool-cli-linux-arm64 -O rocketpool
-chmod +x rocketpool
-./rocketpool --version
+wget -q https://gethstore.blob.core.windows.net/builds/geth-linux-arm64-1.10.20-8f2416a8.tar.gz -O geth.tar.gz
+tar -xvf geth.tar.gz
+rm geth.tar.gz
+mv geth*/geth .
+rm -rf geth-*
+geth version
 
-yum -y search docker
-yum -y install docker
-wget https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)
-mv docker-compose-$(uname -s)-$(uname -m) /usr/local/bin/docker-compose
-chmod -v +x /usr/local/bin/docker-compose
-systemctl enable docker.service
-systemctl start docker.service
-usermod -aG docker ec2-user
-
-su ec2-user
-cd /home/ec2-user
-wget https://github.com/rocket-pool/smartnode-install/releases/latest/download/install.sh -O install.sh
-chmod +x install.sh
-
-# ./install.sh -d
-# exit
-
-# rm install.sh
-# wget <TBD>
-# sudo su ec2-user
-# rocketpool service install -y -d -n prater
-# rocketpool service config
+echo "Install lighthouse"
+wget -q https://github.com/sigp/lighthouse/releases/download/v2.3.2-rc.0/lighthouse-v2.3.2-rc.0-aarch64-unknown-linux-gnu.tar.gz -O lighthouse.tar.gz
+tar -xvf lighthouse.tar.gz
+rm lighthouse.tar.gz
+lighthouse --version

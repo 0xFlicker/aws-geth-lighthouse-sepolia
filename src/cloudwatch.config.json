@@ -1,0 +1,33 @@
+{
+  "agent": {
+    "run_as_user": "root"
+  },
+  "logs": {
+    "logs_collected": {
+      "files": {
+        "collect_list": [
+          {
+            "file_path": "/home/ec2-user/geth.stderr.log",
+            "log_group_name": "sepolia-geth--stderr-log",
+            "log_stream_name": "{instance_id}"
+          },
+          {
+            "file_path": "/home/ec2-user/lighthouse.stderr.log",
+            "log_group_name": "sepolia-lighthouse--stderr-log",
+            "log_stream_name": "{instance_id}"
+          },
+          {
+            "file_path": "/home/ec2-user/geth.stdout.log",
+            "log_group_name": "sepolia-geth--stdout-log",
+            "log_stream_name": "{instance_id}"
+          },
+          {
+            "file_path": "/home/ec2-user/lighthouse.stdout.log",
+            "log_group_name": "sepolia-lighthouse--stdout-log",
+            "log_stream_name": "{instance_id}"
+          }
+        ]
+      }
+    }
+  }
+}

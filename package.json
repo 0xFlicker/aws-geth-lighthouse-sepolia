@@ -1,8 +1,8 @@
 {
-  "name": "cdk-rocketpool-validator",
+  "name": "geth-lighthouse",
   "version": "1.0.0",
   "bin": {
-    "cdk-rocketpool-validator": "bin/cdk-rocketpool-validator.js"
+    "geth-lighthouse": "bin/geth-lighthouse.js"
   },
   "scripts": {
     "build": "tsc",
@@ -15,9 +15,8 @@
     "typescript": "~3.9.7"
   },
   "dependencies": {
-    "@aws-cdk/aws-ec2": "^1.146.0",
-    "@aws-cdk/aws-ssm": "^1.139.0",
-    "aws-cdk-lib": "2.15.0",
+    "aws-cdk-lib": "^2.25.0",
+    "cdk": "^2.25.0",
     "constructs": "^10.0.0",
     "source-map-support": "^0.5.16"
   }
