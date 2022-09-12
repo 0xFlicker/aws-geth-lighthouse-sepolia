@@ -14,7 +14,8 @@ openssl rand -hex 32 | tr -d "\n" > "/etc/jwt/jwt-secret"
 echo "Install geth"
 
 cd /usr/bin
-wget -q https://gethstore.blob.core.windows.net/builds/geth-linux-arm64-1.10.20-8f2416a8.tar.gz -O geth.tar.gz
+
+wget -q https://gethstore.blob.core.windows.net/builds/geth-linux-arm64-1.10.23-d901d853.tar.gz -O geth.tar.gz
 tar -xvf geth.tar.gz
 rm geth.tar.gz
 mv geth*/geth .
@@ -22,7 +23,7 @@ rm -rf geth-*
 geth version
 
 echo "Install lighthouse"
-wget -q https://github.com/sigp/lighthouse/releases/download/v2.3.2-rc.0/lighthouse-v2.3.2-rc.0-aarch64-unknown-linux-gnu.tar.gz -O lighthouse.tar.gz
+wget -q https://github.com/sigp/lighthouse/releases/download/v3.1.0/lighthouse-v3.1.0-aarch64-unknown-linux-gnu-portable.tar.gz -O lighthouse.tar.gz
 tar -xvf lighthouse.tar.gz
 rm lighthouse.tar.gz
 lighthouse --version

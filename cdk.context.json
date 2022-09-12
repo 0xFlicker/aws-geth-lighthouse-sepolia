@@ -8,5 +8,22 @@
   "hosted-zone:account=163871723185:domainName=0xflick.xyz:region=us-west-2": {
     "Id": "/hostedzone/Z03504143IUN18Z7FEASK",
     "Name": "0xflick.xyz."
+  },
+  "availability-zones:account=163871723185:region=us-east-2": [
+    "us-east-2a",
+    "us-east-2b",
+    "us-east-2c"
+  ],
+  "hosted-zone:account=163871723185:domainName=0xflick.xyz:region=us-east-2": {
+    "Id": "/hostedzone/Z03504143IUN18Z7FEASK",
+    "Name": "0xflick.xyz."
+  },
+  "availability-zones:account=163871723185:region=us-west-1": [
+    "us-west-1a",
+    "us-west-1c"
+  ],
+  "hosted-zone:account=163871723185:domainName=0xflick.xyz:region=us-west-1": {
+    "Id": "/hostedzone/Z03504143IUN18Z7FEASK",
+    "Name": "0xflick.xyz."
   }
 }

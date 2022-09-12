@@ -166,18 +166,22 @@ export class GethLighthouseStack extends cdk.Stack {
     new log.LogGroup(this, "geth-stdout", {
       retention: log.RetentionDays.TWO_WEEKS,
       logGroupName: "sepolia-geth--stdout-log",
+      removalPolicy: cdk.RemovalPolicy.DESTROY,
     });
     new log.LogGroup(this, "lighthouse-stdout", {
       retention: log.RetentionDays.TWO_WEEKS,
       logGroupName: "sepolia-lighthouse--stdout-log",
+      removalPolicy: cdk.RemovalPolicy.DESTROY,
     });
     new log.LogGroup(this, "geth-stderr", {
       retention: log.RetentionDays.ONE_MONTH,
       logGroupName: "sepolia-geth--stderr-log",
+      removalPolicy: cdk.RemovalPolicy.DESTROY,
     });
     new log.LogGroup(this, "lighthouse-stderr", {
       retention: log.RetentionDays.ONE_MONTH,
       logGroupName: "sepolia-lighthouse--stderr-log",
+      removalPolicy: cdk.RemovalPolicy.DESTROY,
     });
 
     // Domain
