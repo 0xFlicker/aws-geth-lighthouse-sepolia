@@ -16,13 +16,15 @@ In this project, we introduce a [AWS Cloud Development Kit](https://aws.amazon.c
 
 - Change directory
 
-  `cd cdk-rocketpool-validator-node`
+  `cd aws-geth-lighthouse-sepolia`
 
 - Install the CDK application
 
   `yarn`
 
 - Check the [bin/geth-lighthouse.ts](./bin/geth-lighthouse.ts) and [lib/geth-lighthouse-stack.ts](./lib/geth-lighthouse-stack.ts) and make changes as necessary for you own AWS account.
+
+- Check the [src/sepolia.ini](./src/sepolia.ini), in particular the `HTTPVirtualHosts` and `HTTPCors` fields. The chrome-extension CORS is for the the official metamask client.
 
 - Deploy the CDK application
 
